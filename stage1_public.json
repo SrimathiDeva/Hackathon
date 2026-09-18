@@ -1,0 +1,3845 @@
+[
+  {
+    "question_id": "Q001",
+    "answer": 241,
+    "text": "241 subjects are in the study.",
+    "evidence": [
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-001",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-002",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-003",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-004",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-005",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-006",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-007",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-008",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-009",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-010",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-011",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-012",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-013",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-014",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-015",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-016",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-017",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-018",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-019",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S02-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S03-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S04-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S06-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S07-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S08-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S09-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S10-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S11-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S12-020",
+        "seq": 1
+      },
+      {
+        "domain": "DM",
+        "usubjid": "042-S05-021",
+        "seq": 1
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q002",
+    "answer": 0,
+    "text": "0 subjects at site S07 discontinued due to an adverse event.",
+    "evidence": [],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q003",
+    "answer": 191,
+    "text": "191 subjects experienced adverse events.",
+    "evidence": [
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-020",
+        "seq": 1
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q004",
+    "answer": 294,
+    "text": "294 adverse events are recorded.",
+    "evidence": [
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-001",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-001",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-001",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-001",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-001",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-001",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-002",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-002",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-002",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-002",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-003",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-003",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-003",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-003",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-004",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-004",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-004",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-004",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-004",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-004",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-004",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-004",
+        "seq": 4
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-004",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-004",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-005",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-005",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-005",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-005",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-005",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-006",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-006",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-006",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-006",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-006",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-006",
+        "seq": 4
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-006",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-007",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-007",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-007",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-007",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-007",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-008",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-008",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-008",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-008",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-008",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-008",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-009",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-009",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-009",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-009",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-009",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-009",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-009",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-009",
+        "seq": 4
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-009",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-009",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-009",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-010",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-010",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-010",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-010",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-010",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-010",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-010",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-010",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-011",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-011",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-011",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-011",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-011",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-011",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-011",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-011",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-011",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-011",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-012",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-012",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-012",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-013",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-013",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-013",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-013",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-013",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-013",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-013",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-014",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-014",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-014",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-014",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-014",
+        "seq": 4
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-014",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-014",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-015",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-015",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-015",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-015",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-015",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-015",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-015",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-016",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-016",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-016",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-016",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-016",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-016",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-017",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-017",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-017",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-017",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S01-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-018",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-018",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-018",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-018",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-019",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-019",
+        "seq": 3
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-019",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S06-019",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S09-019",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-019",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S02-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S03-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S04-020",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S05-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S07-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S08-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S10-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-020",
+        "seq": 1
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S11-020",
+        "seq": 2
+      },
+      {
+        "domain": "AE",
+        "usubjid": "042-S12-020",
+        "seq": 1
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q005",
+    "answer": 7200,
+    "text": "7200 vital sign records are recorded.",
+    "evidence": [
+      {
+        "domain": "DOC",
+        "document": "README",
+        "section": "data"
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q006",
+    "answer": "M",
+    "text": "Subject 042-S01-003 sex is M.",
+    "evidence": [
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-003",
+        "seq": 1
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q007",
+    "answer": "DRUG",
+    "text": "Subject 042-S01-003 assigned to arm DRUG.",
+    "evidence": [
+      {
+        "domain": "DM",
+        "usubjid": "042-S01-003",
+        "seq": 1
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q008",
+    "answer": [
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 25
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 26
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 27
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 28
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 29
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 30
+      }
+    ],
+    "text": "Found 6 records for 042-S05-003 within 7 days of WEEK8.",
+    "evidence": [
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 25
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 26
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 27
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 28
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 29
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 30
+      }
+    ],
+    "confidence": 1.0,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q018",
+    "answer": [
+      "042-S05-003",
+      "042-S07-001",
+      "042-S08-014"
+    ],
+    "text": "3 Hy's law candidates. 042-S05-003: ALT 238.9 U/L (>3xULN) and BILI 4.66 mg/dL (>2xULN) within 14 days (2026-04-13); 042-S07-001: ALT 239.7 U/L (>3xULN) and BILI 5.38 mg/dL (>2xULN) within 14 days (2026-03-30); 042-S08-014: ALT 238.5 U/L (>3xULN) and BILI 4.93 mg/dL (>2xULN) within 14 days (2026-04-14)",
+    "evidence": [
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 31
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S05-003",
+        "seq": 33
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S07-001",
+        "seq": 25
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S07-001",
+        "seq": 27
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S08-014",
+        "seq": 31
+      },
+      {
+        "domain": "LB",
+        "usubjid": "042-S08-014",
+        "seq": 33
+      },
+      {
+        "domain": "DOC",
+        "document": "protocol_v1",
+        "section": "7"
+      }
+    ],
+    "confidence": 0.95,
+    "steps_used": 1,
+    "tokens_used": 0
+  },
+  {
+    "question_id": "Q031",
+    "answer": [],
+    "text": "None found. No matching records support this claim.",
+    "evidence": [],
+    "confidence": 0.85,
+    "steps_used": 1,
+    "tokens_used": 0
+  }
+]

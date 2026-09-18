@@ -1,0 +1,3 @@
+# Study Sentinel — ATLAS (Problem 1)
+# Built using the Python standard library for zero installation friction,
+# maximum speed, and rock-solid portability across judge environments.
