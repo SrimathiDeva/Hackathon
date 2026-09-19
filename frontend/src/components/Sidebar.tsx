@@ -6,9 +6,10 @@ import {
   CheckCircle2,
   LayoutDashboard,
   Activity,
+  ShieldAlert,
 } from 'lucide-react'
 
-export type NavTab = 'query' | 'patient' | 'findings' | 'protocol' | 'validation' | 'dashboard' | 'ask'
+export type NavTab = 'monitor' | 'query' | 'patient' | 'findings' | 'protocol' | 'validation' | 'dashboard' | 'ask'
 
 interface SidebarProps {
   activeTab: NavTab
@@ -21,7 +22,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   setActiveTab,
   isBackendHealthy,
 }) => {
-  const navItems: Array<{ id: NavTab; label: string; icon: React.ReactNode }> = [
+  const navItems: Array<{ id: NavTab; label: string; icon: React.ReactNode; isNew?: boolean }> = [
+    { id: 'monitor', label: 'PS2 MONITOR', icon: <ShieldAlert size={18} />, isNew: true },
     { id: 'query', label: 'Query Workbench', icon: <Terminal size={18} /> },
     { id: 'patient', label: 'Patient 360', icon: <User size={18} /> },
     { id: 'findings', label: "Hy's Law", icon: <AlertTriangle size={18} /> },
@@ -135,8 +137,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   }
                 }}
               >
-                <span style={{ color: isActive ? '#38bdf8' : '#64748b' }}>{item.icon}</span>
-                {item.label}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <span style={{ color: isActive ? '#38bdf8' : '#64748b' }}>{item.icon}</span>
+                    {item.label}
+                  </div>
+                  {item.isNew && (
+                    <span className="badge badge-rose font-mono" style={{ fontSize: '0.62rem', padding: '0.1rem 0.35rem' }}>
+                      PS2
+                    </span>
+                  )}
+                </div>
               </button>
             )
           })}

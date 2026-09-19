@@ -6,6 +6,9 @@ import type {
   HysLawData,
   Patient360Data,
   QueryResponse,
+  Stage2Report,
+  Stage2DuplicateTestResult,
+  Stage2ProtocolComparison,
 } from './types'
 
 // Use relative /api if Vite proxy is running, or explicit port 8000
@@ -97,4 +100,104 @@ export async function executeClinicalQuery(question: string): Promise<QueryRespo
   const data = await res.json()
   return { ...data, elapsed_ms: elapsed }
 }
+
+// =============================================================================
+// STAGE 2 — PROBLEM STATEMENT 2 (MONITOR) API CLIENT
+// =============================================================================
+
+export async function runStage2Cycle(
+  cut: number = 6,
+  protocol_version: number = 2,
+  reset_memory: boolean = false
+): Promise<Stage2Report> {
+  const res = await fetch(`${API_BASE}/api/stage2/run-cycle`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cut, protocol_version, reset_memory }),
+  })
+  if (!res.ok) {
+    let err = 'Failed to execute monitoring cycle'
+    try {
+      const data = await res.json()
+      if (data.detail) err = data.detail
+    } catch {}
+    throw new Error(err)
+  }
+  return res.json()
+}
+
+export async function submitHumanGateResponse(
+  escalation_id: string,
+  response: 'APPROVED' | 'REJECTED',
+  reason?: string
+): Promise<any> {
+  const res = await fetch(`${API_BASE}/api/stage2/human-gate/response`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ escalation_id, response, reason }),
+  })
+  if (!res.ok) {
+    let err = 'Failed to submit human gate decision'
+    try {
+      const data = await res.json()
+      if (data.detail) err = data.detail
+    } catch {}
+    throw new Error(err)
+  }
+  return res.json()
+}
+
+export async function submitHumanGateClarify(
+  escalation_id: string,
+  question: string
+): Promise<any> {
+  const res = await fetch(`${API_BASE}/api/stage2/human-gate/clarify`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ escalation_id, question }),
+  })
+  if (!res.ok) {
+    let err = 'Failed to submit human gate clarification'
+    try {
+      const data = await res.json()
+      if (data.detail) err = data.detail
+    } catch {}
+    throw new Error(err)
+  }
+  return res.json()
+}
+
+export async function runDuplicateSuppressionTest(
+  cut: number = 6,
+  protocol_version: number = 2
+): Promise<Stage2DuplicateTestResult> {
+  const res = await fetch(`${API_BASE}/api/stage2/duplicate-suppression-test`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cut, protocol_version }),
+  })
+  if (!res.ok) {
+    let err = 'Failed to run duplicate suppression test'
+    try {
+      const data = await res.json()
+      if (data.detail) err = data.detail
+    } catch {}
+    throw new Error(err)
+  }
+  return res.json()
+}
+
+export async function fetchProtocolComparison(cut: number = 6): Promise<Stage2ProtocolComparison> {
+  const res = await fetch(`${API_BASE}/api/stage2/protocol-comparison?cut=${cut}`)
+  if (!res.ok) {
+    let err = 'Failed to fetch protocol comparison'
+    try {
+      const data = await res.json()
+      if (data.detail) err = data.detail
+    } catch {}
+    throw new Error(err)
+  }
+  return res.json()
+}
+
 

@@ -214,3 +214,51 @@ code, pre, .font-mono {
 .pulse-glow {
   animation: pulseGlow 2.5s infinite;
 }
+
+.badge-rose {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: #fb7185;
+}
+
+.badge-purple {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+}
+
+.badge-blue {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+}
+
+/* Clinical Table */
+.clinical-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.clinical-table th {
+  background: rgba(15, 23, 42, 0.85);
+  color: #94a3b8;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.clinical-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: #f8fafc;
+}
+
+.clinical-table tr:hover td {
+  background: rgba(56, 189, 248, 0.03);
+}
+

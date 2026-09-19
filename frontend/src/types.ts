@@ -188,3 +188,172 @@ export interface QueryResponse {
   elapsed_ms?: number;
 }
 
+// =============================================================================
+// STAGE 2 — PROBLEM STATEMENT 2 (MONITOR) TYPES
+// =============================================================================
+
+export interface Stage2RecordRef {
+  domain: string;
+  usubjid?: string;
+  seq?: number;
+  document?: string;
+  section?: string;
+  details?: Record<string, any>;
+}
+
+export interface Stage2Finding {
+  finding_id: string;
+  usubjid: string;
+  site_id: string;
+  cut: number;
+  category: string;
+  code: string;
+  severity: string;
+  description: string;
+  evidence: Stage2RecordRef[];
+}
+
+export interface Stage2HumanDecision {
+  decision: 'APPROVED' | 'REJECTED' | 'CLARIFY' | string;
+  user: string;
+  timestamp: string;
+  reason?: string;
+  downgraded_to?: string;
+  transmitted_action?: Record<string, any>;
+}
+
+export interface Stage2Clarification {
+  question: string;
+  answer: string;
+  evidence: Stage2RecordRef[];
+}
+
+export interface Stage2Escalation {
+  escalation_id: string;
+  finding_id: string;
+  usubjid: string;
+  site_id: string;
+  code: string;
+  severity: string;
+  summary: string;
+  rationale: string;
+  evidence: Stage2RecordRef[];
+  status: 'PENDING_HUMAN_REVIEW' | 'APPROVED' | 'REJECTED' | 'RESUBMITTED' | string;
+  human_decision?: Stage2HumanDecision;
+  clarification?: Stage2Clarification;
+}
+
+export interface Stage2Query {
+  query_id: string;
+  finding_id: string;
+  usubjid: string;
+  site_id: string;
+  domain: string;
+  target_field: string;
+  query_text: string;
+  severity: string;
+  status: 'OPEN' | 'RESOLVED' | string;
+  evidence: Stage2RecordRef[];
+}
+
+export interface Stage2Deviation {
+  deviation_id: string;
+  usubjid: string;
+  site_id: string;
+  protocol_version: number;
+  category: string;
+  description: string;
+  severity: string;
+  evidence: Stage2RecordRef[];
+}
+
+export interface Stage2TraceEntry {
+  trace_id: string;
+  timestamp: string;
+  node: 'detect' | 'medical_review' | 'data_manager' | 'compliance' | 'human_gate' | 'execute' | string;
+  action: string;
+  decision: string;
+  subject?: string;
+  finding_id?: string;
+  metadata: Record<string, any>;
+}
+
+export interface Stage2Report {
+  cycle_id: string;
+  cut: number;
+  protocol_version: number;
+  timestamp: string;
+  status: string;
+  summary: {
+    total_findings: number;
+    total_escalations: number;
+    total_queries: number;
+    total_deviations: number;
+    total_actions_executed: number;
+    total_trace_entries: number;
+  };
+  breakdowns: {
+    findings: Record<string, number>;
+    escalations: Record<string, number>;
+    deviations: Record<string, number>;
+    query_domains: Record<string, number>;
+  };
+  findings: Stage2Finding[];
+  escalations: Stage2Escalation[];
+  queries: Stage2Query[];
+  deviations: Stage2Deviation[];
+  actions_executed: Array<Record<string, any>>;
+  trace_entries: Stage2TraceEntry[];
+  trace_summary: Record<string, number>;
+  memory_stats: {
+    stored_queries: number;
+    stored_escalations: number;
+    stored_deviations: number;
+    human_decisions: number;
+  };
+}
+
+export interface Stage2DuplicateTestResult {
+  cut: number;
+  protocol_version: number;
+  cycle_1: {
+    findings: number;
+    escalations: number;
+    queries: number;
+    deviations: number;
+  };
+  cycle_2: {
+    findings: number;
+    escalations: number;
+    queries: number;
+    deviations: number;
+  };
+  suppressed: {
+    escalations: number;
+    queries: number;
+    deviations: number;
+    total: number;
+  };
+  suppression_rate_percent: number;
+  persisted_in_memory: {
+    escalations: number;
+    queries: number;
+    deviations: number;
+  };
+}
+
+export interface ProtocolVersionBreakdown {
+  version: number;
+  label: string;
+  rules: string;
+  total_deviations: number;
+  breakdown: Record<string, number>;
+}
+
+export interface Stage2ProtocolComparison {
+  cut: number;
+  versions: ProtocolVersionBreakdown[];
+  amendment_highlights: string[];
+}
+
+

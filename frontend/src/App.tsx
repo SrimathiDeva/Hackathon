@@ -8,12 +8,13 @@ import { AskAtlasView } from './components/AskAtlasView'
 import { HysLawView } from './components/HysLawView'
 import { ProtocolView } from './components/ProtocolView'
 import { ValidationView } from './components/ValidationView'
+import { MonitorDashboardView } from './components/MonitorDashboardView'
 import { fetchHealth, fetchStats } from './api'
 import type { StudyStats } from './types'
 import { AlertCircle } from 'lucide-react'
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<NavTab>('query')
+  const [activeTab, setActiveTab] = useState<NavTab>('monitor')
   const [selectedSubject, setSelectedSubject] = useState<string>('042-S07-001')
   const [isBackendHealthy, setIsBackendHealthy] = useState<boolean>(false)
   const [stats, setStats] = useState<StudyStats | null>(null)
@@ -76,7 +77,13 @@ export function App() {
             </span>
             <span style={{ color: '#64748b' }}>/</span>
             <span style={{ fontSize: '0.9rem', color: '#38bdf8', fontWeight: 600, textTransform: 'capitalize' }}>
-              {activeTab === 'query' ? 'Query Workbench' : activeTab === 'findings' ? "Hy's Law" : activeTab}
+              {activeTab === 'monitor'
+                ? 'PS2 MONITOR Surveillance'
+                : activeTab === 'query'
+                ? 'Query Workbench'
+                : activeTab === 'findings'
+                ? "Hy's Law"
+                : activeTab}
             </span>
           </div>
 
@@ -111,6 +118,7 @@ export function App() {
 
         {/* Page Content View */}
         <div style={{ flex: 1, padding: '2.5rem', overflowY: 'auto' }}>
+          {activeTab === 'monitor' && <MonitorDashboardView />}
           {activeTab === 'query' && (
             <QueryWorkbenchView onNavigateToPatient={handleNavigateToPatient} />
           )}
@@ -140,10 +148,10 @@ export function App() {
           }}
         >
           <div>
-            ATLAS — Study Sentinel (Problem 1) &bull; Hackathon Submission
+            ATLAS — Clinical Sentinel (Problem Statement 1 & 2 MONITOR) &bull; Hackathon Submission
           </div>
           <div>
-            Grounded RecordRef Evidence &bull; No LLM Dependency
+            Grounded RecordRef Evidence &bull; Multi-Agent Deterministic Engine
           </div>
         </footer>
       </main>
