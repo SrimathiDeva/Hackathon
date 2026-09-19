@@ -9,6 +9,7 @@ import { HysLawView } from './components/HysLawView'
 import { ProtocolView } from './components/ProtocolView'
 import { ValidationView } from './components/ValidationView'
 import { MonitorDashboardView } from './components/MonitorDashboardView'
+import { KnowledgeGraphView } from './components/KnowledgeGraphView'
 import { fetchHealth, fetchStats } from './api'
 import type { StudyStats } from './types'
 import { AlertCircle } from 'lucide-react'
@@ -79,6 +80,8 @@ export function App() {
             <span style={{ fontSize: '0.9rem', color: '#38bdf8', fontWeight: 600, textTransform: 'capitalize' }}>
               {activeTab === 'monitor'
                 ? 'PS2 MONITOR Surveillance'
+                : activeTab === 'knowledge-graph'
+                ? 'Knowledge Graph Visualization'
                 : activeTab === 'query'
                 ? 'Query Workbench'
                 : activeTab === 'findings'
@@ -119,6 +122,7 @@ export function App() {
         {/* Page Content View */}
         <div style={{ flex: 1, padding: '2.5rem', overflowY: 'auto' }}>
           {activeTab === 'monitor' && <MonitorDashboardView />}
+          {activeTab === 'knowledge-graph' && <KnowledgeGraphView />}
           {activeTab === 'query' && (
             <QueryWorkbenchView onNavigateToPatient={handleNavigateToPatient} />
           )}

@@ -268,14 +268,24 @@ export interface Stage2Deviation {
 }
 
 export interface Stage2TraceEntry {
-  trace_id: string;
+  trace_id?: string;
   timestamp: string;
   node: 'detect' | 'medical_review' | 'data_manager' | 'compliance' | 'human_gate' | 'execute' | string;
-  action: string;
+  action?: string;
   decision: string;
   subject?: string;
   finding_id?: string;
-  metadata: Record<string, any>;
+  evidence?: any[];
+  details?: Record<string, any>;
+  metadata?: Record<string, any>;
+}
+
+export interface Stage2TraceSummary {
+  total_decisions?: number;
+  nodes_active?: string[];
+  decisions_per_node?: Record<string, number>;
+  latest_timestamp?: string | null;
+  [key: string]: any;
 }
 
 export interface Stage2Report {
@@ -304,7 +314,7 @@ export interface Stage2Report {
   deviations: Stage2Deviation[];
   actions_executed: Array<Record<string, any>>;
   trace_entries: Stage2TraceEntry[];
-  trace_summary: Record<string, number>;
+  trace_summary: Stage2TraceSummary;
   memory_stats: {
     stored_queries: number;
     stored_escalations: number;
@@ -354,6 +364,66 @@ export interface Stage2ProtocolComparison {
   cut: number;
   versions: ProtocolVersionBreakdown[];
   amendment_highlights: string[];
+}
+
+export type GraphNodeType =
+  | 'subject'
+  | 'clinical_record'
+  | 'lab'
+  | 'adverse_event'
+  | 'exposure'
+  | 'visit'
+  | 'protocol'
+  | 'finding'
+  | 'evidence'
+  | 'escalation'
+  | 'query'
+  | 'study';
+
+export interface GraphNode {
+  id: string;
+  type: GraphNodeType;
+  label: string;
+  sublabel: string;
+  data: Record<string, any>;
+  x?: number;
+  y?: number;
+  vx?: number;
+  vy?: number;
+}
+
+export interface GraphEdge {
+  id: string;
+  source: string;
+  target: string;
+  type: string;
+  label: string;
+}
+
+export interface KnowledgeGraphData {
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  stats: {
+    total_study_nodes: number;
+    total_study_edges: number;
+    total_subjects: number;
+    total_records: number;
+    active_cut: number;
+    protocol_version: number;
+    findings_in_cycle: number;
+    escalations_in_cycle: number;
+    deviations_in_cycle: number;
+    returned_nodes: number;
+    returned_edges: number;
+  };
+  query: {
+    usubjid?: string | null;
+    finding_id?: string | null;
+    record_ref?: string | null;
+    node_type?: string | null;
+    cut?: number;
+    protocol_version?: number;
+  };
 }
 
 

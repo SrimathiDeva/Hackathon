@@ -21,6 +21,7 @@ import type {
   Stage2Report,
   Stage2DuplicateTestResult,
   Stage2ProtocolComparison,
+  Stage2TraceEntry,
 } from '../types'
 import {
   runStage2Cycle,
@@ -44,6 +45,36 @@ interface PipelineStep {
   name: string
   code: string
   status: string
+}
+
+// Trace normalization helpers to safely extract display fields without rendering raw objects
+const getTraceSubject = (t: Stage2TraceEntry): string => {
+  if (t.subject) return String(t.subject)
+  if (t.details?.subject) return String(t.details.subject)
+  if (t.details?.usubjid) return String(t.details.usubjid)
+  if (Array.isArray(t.evidence) && t.evidence.length > 0 && t.evidence[0]?.usubjid) {
+    return String(t.evidence[0].usubjid)
+  }
+  return '—'
+}
+
+const getTraceRefId = (t: Stage2TraceEntry): string => {
+  if (t.finding_id) return String(t.finding_id)
+  if (t.details?.finding_id) return String(t.details.finding_id)
+  if (t.details?.escalation_id) return String(t.details.escalation_id)
+  if (t.details?.query_id) return String(t.details.query_id)
+  if (t.details?.deviation_id) return String(t.details.deviation_id)
+  return '—'
+}
+
+const getTraceAction = (t: Stage2TraceEntry): string => {
+  if (t.action) return String(t.action)
+  if (t.details?.action) return String(t.details.action)
+  if (t.details?.action_type) return String(t.details.action_type)
+  if (t.details?.rule_broken) return String(t.details.rule_broken)
+  if (t.details?.code) return String(t.details.code)
+  if (t.details?.category) return String(t.details.category)
+  return t.node ? `${String(t.node).toUpperCase()} decision` : 'Decision'
 }
 
 export const MonitorDashboardView: React.FC = () => {
@@ -304,13 +335,21 @@ export const MonitorDashboardView: React.FC = () => {
 
   const filteredTraces = (report?.trace_entries || []).filter((t) => {
     const matchNode = traceFilterNode === 'ALL' || t.node === traceFilterNode
-    const matchSearch =
-      !traceSearch ||
-      (t.subject && t.subject.toLowerCase().includes(traceSearch.toLowerCase())) ||
-      (t.finding_id && t.finding_id.toLowerCase().includes(traceSearch.toLowerCase())) ||
-      t.decision.toLowerCase().includes(traceSearch.toLowerCase()) ||
-      t.action.toLowerCase().includes(traceSearch.toLowerCase())
-    return matchNode && matchSearch
+    if (!matchNode) return false
+    if (!traceSearch) return true
+    const searchLower = traceSearch.toLowerCase()
+    const subj = getTraceSubject(t).toLowerCase()
+    const refId = getTraceRefId(t).toLowerCase()
+    const dec = String(t.decision || '').toLowerCase()
+    const act = getTraceAction(t).toLowerCase()
+    const nodeStr = String(t.node || '').toLowerCase()
+    return (
+      subj.includes(searchLower) ||
+      refId.includes(searchLower) ||
+      dec.includes(searchLower) ||
+      act.includes(searchLower) ||
+      nodeStr.includes(searchLower)
+    )
   })
 
   // SAE Miscoded escalation item for prominent display
@@ -2191,30 +2230,47 @@ export const MonitorDashboardView: React.FC = () => {
               <div style={{ fontSize: '0.68rem', color: '#38bdf8' }}>Total Ledger</div>
             </div>
 
-            {Object.entries(report.trace_summary).map(([node, count]) => {
-              const isFiltered = traceFilterNode === node
-              return (
-                <div
-                  key={node}
-                  className="glass-card"
-                  onClick={() => setTraceFilterNode(isFiltered ? 'ALL' : node)}
-                  style={{
-                    padding: '0.85rem',
-                    border: isFiltered ? '1px solid #38bdf8' : '1px solid rgba(255, 255, 255, 0.08)',
-                    background: isFiltered ? 'rgba(14, 165, 233, 0.2)' : 'rgba(15, 23, 42, 0.6)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div style={{ fontSize: '0.7rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 600 }}>
-                    {node}
+            {(() => {
+              const traceDistribution: Record<string, number> =
+                report.trace_summary?.decisions_per_node ||
+                (report.trace_entries || []).reduce((acc: Record<string, number>, t) => {
+                  if (t?.node) {
+                    acc[t.node] = (acc[t.node] || 0) + 1
+                  }
+                  return acc
+                }, {})
+
+              return Object.entries(traceDistribution).map(([node, count]) => {
+                const isFiltered = traceFilterNode === node
+                const displayCount =
+                  typeof count === 'number'
+                    ? count
+                    : typeof count === 'object'
+                    ? JSON.stringify(count)
+                    : String(count)
+                return (
+                  <div
+                    key={node}
+                    className="glass-card"
+                    onClick={() => setTraceFilterNode(isFiltered ? 'ALL' : node)}
+                    style={{
+                      padding: '0.85rem',
+                      border: isFiltered ? '1px solid #38bdf8' : '1px solid rgba(255, 255, 255, 0.08)',
+                      background: isFiltered ? 'rgba(14, 165, 233, 0.2)' : 'rgba(15, 23, 42, 0.6)',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <div style={{ fontSize: '0.7rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 600 }}>
+                      {node}
+                    </div>
+                    <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#f8fafc', marginTop: '0.2rem' }}>
+                      {displayCount}
+                    </div>
+                    <div style={{ fontSize: '0.68rem', color: '#38bdf8' }}>Trace Entries</div>
                   </div>
-                  <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#f8fafc', marginTop: '0.2rem' }}>
-                    {count}
-                  </div>
-                  <div style={{ fontSize: '0.68rem', color: '#38bdf8' }}>Trace Entries</div>
-                </div>
-              )
-            })}
+                )
+              })
+            })()}
           </div>
 
           {/* Trace Entries Table with Search & Filter */}
@@ -2261,46 +2317,57 @@ export const MonitorDashboardView: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredTraces.slice(0, 80).map((t) => (
-                    <tr key={t.trace_id}>
-                      <td className="font-mono" style={{ fontSize: '0.72rem', color: '#64748b' }}>
-                        {t.trace_id}
-                      </td>
-                      <td className="font-mono" style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
-                        {t.timestamp.replace('T', ' ').slice(0, 19)}
-                      </td>
-                      <td>
-                        <span className="badge badge-cyan font-mono" style={{ fontSize: '0.68rem' }}>
-                          {t.node}
-                        </span>
-                      </td>
-                      <td style={{ fontSize: '0.82rem', fontWeight: 600, color: '#f8fafc' }}>
-                        {t.action}
-                      </td>
-                      <td>
-                        <span
-                          className={
-                            t.decision.includes('suppressed')
-                              ? 'badge badge-purple font-mono'
-                              : t.decision === 'APPROVED'
-                              ? 'badge badge-emerald font-mono'
-                              : t.decision === 'REJECTED'
-                              ? 'badge badge-rose font-mono'
-                              : 'badge badge-blue font-mono'
-                          }
-                          style={{ fontSize: '0.68rem' }}
-                        >
-                          {t.decision}
-                        </span>
-                      </td>
-                      <td className="font-mono" style={{ fontSize: '0.78rem', color: '#38bdf8' }}>
-                        {t.subject || '—'}
-                      </td>
-                      <td className="font-mono" style={{ fontSize: '0.72rem', color: '#64748b' }}>
-                        {t.finding_id || '—'}
-                      </td>
-                    </tr>
-                  ))}
+                  {filteredTraces.slice(0, 80).map((t, idx) => {
+                    const rowKey = t.trace_id || `trace-${t.node}-${idx}`
+                    const traceId = t.trace_id || `TRC-${String(idx + 1).padStart(4, '0')}`
+                    const timestampStr = t.timestamp ? String(t.timestamp).replace('T', ' ').slice(0, 19) : '—'
+                    const nodeStr = String(t.node || '—')
+                    const actionStr = getTraceAction(t)
+                    const decisionStr = String(t.decision || '—')
+                    const subjectStr = getTraceSubject(t)
+                    const findingIdStr = getTraceRefId(t)
+
+                    return (
+                      <tr key={rowKey}>
+                        <td className="font-mono" style={{ fontSize: '0.72rem', color: '#64748b' }}>
+                          {traceId}
+                        </td>
+                        <td className="font-mono" style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
+                          {timestampStr}
+                        </td>
+                        <td>
+                          <span className="badge badge-cyan font-mono" style={{ fontSize: '0.68rem' }}>
+                            {nodeStr}
+                          </span>
+                        </td>
+                        <td style={{ fontSize: '0.82rem', fontWeight: 600, color: '#f8fafc' }}>
+                          {actionStr}
+                        </td>
+                        <td>
+                          <span
+                            className={
+                              decisionStr.includes('suppressed')
+                                ? 'badge badge-purple font-mono'
+                                : decisionStr === 'APPROVED'
+                                ? 'badge badge-emerald font-mono'
+                                : decisionStr === 'REJECTED'
+                                ? 'badge badge-rose font-mono'
+                                : 'badge badge-blue font-mono'
+                            }
+                            style={{ fontSize: '0.68rem' }}
+                          >
+                            {decisionStr}
+                          </span>
+                        </td>
+                        <td className="font-mono" style={{ fontSize: '0.78rem', color: '#38bdf8' }}>
+                          {subjectStr}
+                        </td>
+                        <td className="font-mono" style={{ fontSize: '0.72rem', color: '#64748b' }}>
+                          {findingIdStr}
+                        </td>
+                      </tr>
+                    )
+                  })}
                 </tbody>
               </table>
             </div>

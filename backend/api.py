@@ -666,3 +666,426 @@ def get_protocol_comparison(cut: int = 6):
             "Prohibited concomitant meds: 7 in v1/v2 -> 11 in v3 (Sulfonylureas/Glibenclamide added in v3).",
         ],
     }
+
+
+# =============================================================================
+# KNOWLEDGE GRAPH ENDPOINT (PS2 MONITOR)
+# =============================================================================
+
+# Fast cycle report cache by (cut, protocol_version)
+_stage2_cycle_cache: Dict[tuple, ReviewReport] = {}
+
+
+@app.get("/api/knowledge-graph")
+def get_knowledge_graph(
+    usubjid: Optional[str] = None,
+    finding_id: Optional[str] = None,
+    record_ref: Optional[str] = None,
+    node_type: Optional[str] = None,
+    limit: int = 80,
+    cut: int = 6,
+    protocol_version: int = 2,
+):
+    """
+    Returns an interactive, grounded Knowledge Graph subnetwork.
+    Demonstrates that ATLAS MONITOR findings, medical review escalations,
+    and compliance audits are grounded in real study data:
+      Subject -> Clinical Records -> Evidence RecordRefs -> Findings -> Protocol Rules -> Escalations.
+    """
+    global _stage2_cycle_cache
+
+    # Retrieve or execute monitoring cycle for requested cut and protocol version
+    cache_key = (cut, protocol_version)
+    if cache_key in _stage2_cycle_cache:
+        rep = _stage2_cycle_cache[cache_key]
+    else:
+        rep = stage2_crew.run_cycle(cut=cut, protocol_version=protocol_version)
+        _stage2_cycle_cache[cache_key] = rep
+
+    nodes_dict: Dict[str, Dict[str, Any]] = {}
+    edges_list: List[Dict[str, Any]] = []
+    edges_seen: set = set()
+
+    def add_node(node_id: str, n_type: str, label: str, sublabel: str = "", data: Optional[Dict[str, Any]] = None):
+        if node_id not in nodes_dict:
+            nodes_dict[node_id] = {
+                "id": node_id,
+                "type": n_type,
+                "label": label,
+                "sublabel": sublabel,
+                "data": serialize_obj(data or {}),
+            }
+
+    def add_edge(source: str, target: str, rel_type: str, label: str = ""):
+        edge_key = (source, target, rel_type)
+        if edge_key not in edges_seen:
+            edges_seen.add(edge_key)
+            edges_list.append({
+                "id": f"e_{source}_{target}_{rel_type}",
+                "source": source,
+                "target": target,
+                "type": rel_type,
+                "label": label or rel_type,
+            })
+
+    # Standard Protocol Rule Definitions
+    protocol_rules = {
+        "PROT-RULE-HYS": {
+            "title": "Protocol §7: Hy's Law Liver Safety",
+            "sublabel": "ALT/AST > 3x ULN & BILI > 2x ULN within 14d",
+            "data": {
+                "rule_id": "§7",
+                "title": "Hy's Law Liver Safety Criterion",
+                "section": "Protocol §7 Safety Monitoring",
+                "criteria": "ALT or AST > 3x ULN concurrent with Total Bilirubin > 2x ULN within 14 days without baseline cholestasis.",
+                "action": "Immediate IP Hold & Medical Monitor Escalation (Protocol §7).",
+                "uln_limits": {"ALT": "56 U/L", "AST": "40 U/L", "BILI": "1.2 mg/dL"},
+                "s07_factor": "1 µkat/L = 60 U/L conversion applied",
+            },
+        },
+        "PROT-RULE-SAE": {
+            "title": "Protocol §6/9: Serious Adverse Events",
+            "sublabel": "Hospitalization / Life-Threatening Criterion",
+            "data": {
+                "rule_id": "§6/9",
+                "title": "Serious Adverse Event Reporting",
+                "section": "Protocol §9 Adverse Event Reporting",
+                "criteria": "Any untoward medical occurrence resulting in hospitalization (AESHOSP='Y') or marked serious (AESER='Y').",
+                "action": "Expedited 24h Medical Monitor Adjudication.",
+            },
+        },
+        "PROT-RULE-DOSE": {
+            "title": "Protocol §8: Dosage and Administration",
+            "sublabel": "Prescribed Treatment vs Administered Dose",
+            "data": {
+                "rule_id": "§8",
+                "title": "Dosage & Administration Verification",
+                "section": "Protocol §8 Investigational Product Dosing",
+                "criteria": "Subject administered dose differing from randomized protocol arm.",
+                "action": "Data Query & Site Compliance Notification.",
+            },
+        },
+        "PROT-RULE-WINDOW": {
+            "title": f"Protocol v{protocol_version}: Visit Window",
+            "sublabel": "±3 days under Amendment 2 (±7d in v1)",
+            "data": {
+                "rule_id": "AMD-2-WINDOW",
+                "title": "Visit Window Compliance",
+                "version": protocol_version,
+                "window": "±3 days" if protocol_version >= 2 else "±7 days",
+                "criteria": f"Visits occurring outside scheduled window (±{3 if protocol_version >= 2 else 7} days).",
+            },
+        },
+        "PROT-RULE-RENAL": {
+            "title": "Amendment 2: Renal Exclusion",
+            "sublabel": "Screening Creatinine > 1.5 mg/dL Exclusion",
+            "data": {
+                "rule_id": "AMD-2-RENAL",
+                "title": "Renal Function Exclusion Criterion",
+                "version": protocol_version,
+                "threshold": "> 1.5 mg/dL",
+                "criteria": "Exclusion criterion active in Protocol v2/v3 for screening creatinine > 1.5 mg/dL.",
+            },
+        },
+        "PROT-RULE-CONMED": {
+            "title": "Protocol §5.2: Concomitant Medications",
+            "sublabel": "Prohibited Glucocorticoids & Unapproved Meds",
+            "data": {
+                "rule_id": "§5.2",
+                "title": "Prohibited Concomitant Therapy",
+                "section": "Protocol §5.2 Concomitant Medications",
+                "criteria": "Prohibited medications taken during active study window.",
+            },
+        },
+    }
+
+    def ensure_protocol_rule(rule_id: str):
+        r_info = protocol_rules.get(rule_id)
+        if r_info:
+            add_node(rule_id, "protocol", r_info["title"], r_info["sublabel"], r_info["data"])
+
+    def add_subject_node(u: str) -> str:
+        subj_id = f"SUBJ-{u}"
+        p360 = graph.subjects.get(u, {})
+        dm = p360.get("demographics") or {}
+        site = dm.get("SITEID") or (u.split("-")[1] if "-" in u else "UNKNOWN")
+        age = dm.get("AGE", "N/A")
+        sex = dm.get("SEX", "N/A")
+        arm = dm.get("ARM", "Active")
+        country = dm.get("COUNTRY", "US")
+
+        # Counts
+        cnt_lb = len(p360.get("labs", []))
+        cnt_ae = len(p360.get("adverse_events", []))
+        cnt_vs = len(p360.get("vitals", []))
+        cnt_ex = len(p360.get("exposure", []))
+        cnt_cm = len(p360.get("medications", []))
+
+        sublabel = f"Site {site} | {age}y {sex} | {arm}"
+        subj_data = {
+            "usubjid": u,
+            "site": site,
+            "age": age,
+            "sex": sex,
+            "arm": arm,
+            "country": country,
+            "record_counts": {
+                "LB": cnt_lb,
+                "AE": cnt_ae,
+                "VS": cnt_vs,
+                "EX": cnt_ex,
+                "CM": cnt_cm,
+                "total": cnt_lb + cnt_ae + cnt_vs + cnt_ex + cnt_cm,
+            },
+            "disposition": p360.get("disposition"),
+        }
+        add_node(subj_id, "subject", u, sublabel, subj_data)
+        return subj_id
+
+    def add_finding_chain(f: Finding):
+        f_id = f"FIND-{f.finding_id}"
+        f_code = f.code or "CLINICAL_FINDING"
+        f_sub = f"{f.category} | Severity: {f.severity}"
+        add_node(f_id, "finding", f_code, f_sub, f.to_dict())
+
+        # Link finding to subject
+        if f.usubjid:
+            subj_id = add_subject_node(f.usubjid)
+            add_edge(f_id, subj_id, "RELATES_TO", "RELATES_TO")
+
+        # Link finding to protocol rule
+        rule_node = "PROT-RULE-HYS" if f.code == "HYS_LAW" else (
+            "PROT-RULE-SAE" if f.code == "SERIOUS_AE" else (
+                "PROT-RULE-DOSE" if f.code == "WRONG_DOSE" else (
+                    "PROT-RULE-CONMED" if f.code == "PROHIBITED_MED" else None
+                )
+            )
+        )
+        if rule_node:
+            ensure_protocol_rule(rule_node)
+            add_edge(f_id, rule_node, "EVALUATED_AGAINST", "EVALUATED_AGAINST")
+
+        # Link finding to escalation if present
+        for esc in rep.escalations:
+            if esc.finding_id == f.finding_id or (esc.usubjid == f.usubjid and esc.code in (f.code, f"HYS_LAW_ALERT")):
+                esc_id = f"ESC-{esc.escalation_id}"
+                esc_sub = f"To: {esc.escalated_to} | {esc.severity}"
+                add_node(esc_id, "escalation", f"Escalation: {esc.code}", esc_sub, esc.to_dict())
+                add_edge(f_id, esc_id, "TRIGGERED_ESCALATION", "TRIGGERED_ESCALATION")
+
+        # Link finding to evidence and clinical records
+        for ev in f.evidence:
+            dom = ev.get("domain", "")
+            u = ev.get("usubjid") or f.usubjid or ""
+            seq = ev.get("seq")
+            ev_id = f"EVID-{dom}-{u}-{seq}"
+            ev_label = f"Evidence {dom}:{seq}"
+            add_node(ev_id, "evidence", ev_label, f"Grounded Citation ({dom})", ev)
+            add_edge(f_id, ev_id, "SUPPORTED_BY", "SUPPORTED_BY")
+
+            # Look up underlying record
+            rec = record_index.get((dom, u, seq))
+            if rec:
+                rec_id = f"REC-{dom}-{u}-{seq}"
+                rec_type = "lab" if dom == "LB" else ("adverse_event" if dom == "AE" else ("exposure" if dom == "EX" else "clinical_record"))
+
+                rec_label = f"{dom} #{seq}"
+                rec_sub = ""
+                if dom == "LB":
+                    t_cd = rec.get("LBTESTCD", "")
+                    std_val = rec.get("LB_STD_VAL")
+                    std_u = rec.get("LB_STD_UNIT", "")
+                    vst = rec.get("VISIT", "")
+                    rec_label = f"LB #{seq} ({t_cd})"
+                    rec_sub = f"{t_cd} = {std_val} {std_u} [{vst}]"
+                elif dom == "AE":
+                    term = rec.get("AETERM", "")
+                    sev = rec.get("AESEV", "")
+                    rec_label = f"AE #{seq} ({term})"
+                    rec_sub = f"Severity: {sev}"
+                elif dom == "EX":
+                    dose = rec.get("EXDOSE", "")
+                    dose_u = rec.get("EXDOSU", "")
+                    rec_label = f"EX #{seq}"
+                    rec_sub = f"Dose: {dose} {dose_u}"
+
+                add_node(rec_id, rec_type, rec_label, rec_sub, rec)
+                add_edge(ev_id, rec_id, "REFERENCES", "REFERENCES")
+
+                if u:
+                    subj_node_id = add_subject_node(u)
+                    add_edge(subj_node_id, rec_id, "HAS_RECORD", "HAS_RECORD")
+
+                # Link record to Visit
+                vst_name = rec.get("VISIT")
+                if vst_name and u:
+                    v_id = f"VISIT-{u}-{vst_name}"
+                    v_date = rec.get("LBDTC") or rec.get("AESTDTC") or rec.get("VSDTC") or ""
+                    add_node(v_id, "visit", f"Visit {vst_name}", f"Date: {v_date}", {"visit": vst_name, "usubjid": u, "date": v_date})
+                    add_edge(rec_id, v_id, "AT_VISIT", "AT_VISIT")
+                    add_edge(add_subject_node(u), v_id, "ATTENDED_VISIT", "ATTENDED_VISIT")
+
+    # Case 1: Targeted Subject search (e.g. 042-S05-003)
+    if usubjid:
+        clean_u = usubjid.strip()
+        subj_id = add_subject_node(clean_u)
+        p360 = graph.subjects.get(clean_u, {})
+
+        # Find all findings for this subject
+        subj_findings = [f for f in rep.findings if f.usubjid == clean_u]
+        for f in subj_findings:
+            add_finding_chain(f)
+
+        # Include key domain records up to limit
+        rec_count = 0
+        for dom, dom_list in [("LB", p360.get("labs", [])), ("AE", p360.get("adverse_events", [])), ("EX", p360.get("exposure", []))]:
+            for r in dom_list:
+                if rec_count >= limit:
+                    break
+                seq = r.get("SEQ") or r.get(f"{dom}SEQ")
+                if seq is None:
+                    continue
+                try:
+                    seq_int = int(seq)
+                except (ValueError, TypeError):
+                    continue
+
+                rec_id = f"REC-{dom}-{clean_u}-{seq_int}"
+                if rec_id in nodes_dict:
+                    continue  # already added by finding chain
+
+                # Only include significant labs or recent records
+                is_high_lab = (
+                    dom == "LB" and (
+                        (r.get("LBTESTCD") == "ALT" and (r.get("LB_STD_VAL") or 0) > 100) or
+                        (r.get("LBTESTCD") == "BILI" and (r.get("LB_STD_VAL") or 0) > 1.5) or
+                        (r.get("LBTESTCD") == "CREAT" and (r.get("LB_STD_VAL") or 0) > 1.2)
+                    )
+                )
+                if dom in ["AE", "EX"] or is_high_lab or rec_count < 15:
+                    rec_type = "lab" if dom == "LB" else ("adverse_event" if dom == "AE" else "exposure")
+                    test_cd = r.get("LBTESTCD") or r.get("AETERM") or r.get("EXDOSE")
+                    rec_label = f"{dom} #{seq_int} ({test_cd})"
+                    vst = r.get("VISIT", "")
+                    val = r.get("LB_STD_VAL")
+                    u_lbl = r.get("LB_STD_UNIT", "")
+                    sublabel = f"{val} {u_lbl} [{vst}]" if val is not None else f"[{vst}]"
+                    add_node(rec_id, rec_type, rec_label, sublabel, r)
+                    add_edge(subj_id, rec_id, "HAS_RECORD", "HAS_RECORD")
+
+                    if vst:
+                        v_id = f"VISIT-{clean_u}-{vst}"
+                        add_node(v_id, "visit", f"Visit {vst}", "", {"visit": vst, "usubjid": clean_u})
+                        add_edge(rec_id, v_id, "AT_VISIT", "AT_VISIT")
+                        add_edge(subj_id, v_id, "ATTENDED_VISIT", "ATTENDED_VISIT")
+                    rec_count += 1
+
+    # Case 2: Targeted Finding Search
+    elif finding_id:
+        clean_fid = finding_id.strip()
+        matched_findings = [f for f in rep.findings if clean_fid.lower() in f.finding_id.lower() or clean_fid.lower() in (f.code or "").lower()]
+        for f in matched_findings[:limit]:
+            add_finding_chain(f)
+
+    # Case 3: Targeted RecordRef Search (e.g. LB:31 or 042-S05-003:LB:31)
+    elif record_ref:
+        clean_ref = record_ref.strip()
+        parts = clean_ref.split(":")
+        dom_query = parts[-2].upper() if len(parts) >= 2 else "LB"
+        seq_query = int(parts[-1]) if parts[-1].isdigit() else 31
+        u_query = parts[0] if len(parts) >= 3 else None
+
+        for (d, u, seq), r in record_index.items():
+            if d == dom_query and seq == seq_query and (u_query is None or u == u_query):
+                rec_id = f"REC-{d}-{u}-{seq}"
+                rec_type = "lab" if d == "LB" else ("adverse_event" if d == "AE" else "clinical_record")
+                add_node(rec_id, rec_type, f"{d} #{seq}", str(r.get("LBTESTCD") or r.get("AETERM") or ""), r)
+                subj_id = add_subject_node(u)
+                add_edge(subj_id, rec_id, "HAS_RECORD", "HAS_RECORD")
+
+                # Find any finding citing this record
+                for f in rep.findings:
+                    if any(ev.get("domain") == d and str(ev.get("seq")) == str(seq) and ev.get("usubjid", u) == u for ev in f.evidence):
+                        add_finding_chain(f)
+                break
+
+    # Case 4: Default / Study-Level Overview
+    else:
+        # 1. Add Study Root Node
+        study_id = "STUDY-042"
+        add_node(
+            study_id,
+            "study",
+            "Study STUDY-042",
+            f"Phase IIb Clinical Trial | Cut {cut} (Protocol v{protocol_version})",
+            {
+                "protocol": "STUDY-042",
+                "phase": "Phase IIb",
+                "total_subjects": len(graph.subjects),
+                "total_records": sum(len(t) for t in graph.tables.values()),
+                "cuts": 12,
+                "active_cut": cut,
+                "protocol_version": protocol_version,
+            },
+        )
+
+        # 2. Add Protocol Rules
+        for r_id in ["PROT-RULE-HYS", "PROT-RULE-SAE", "PROT-RULE-DOSE", "PROT-RULE-WINDOW", "PROT-RULE-RENAL", "PROT-RULE-CONMED"]:
+            ensure_protocol_rule(r_id)
+            add_edge(study_id, r_id, "GOVERNED_BY", "GOVERNED_BY")
+
+        # 3. Add High-Value Hy's Law Candidates (042-S05-003, 042-S07-001, 042-S08-014)
+        for cand_u in ["042-S05-003", "042-S07-001", "042-S08-014"]:
+            for f in rep.findings:
+                if f.usubjid == cand_u and f.code == "HYS_LAW":
+                    add_finding_chain(f)
+
+        # 4. Add Representative SAE and Dosing findings
+        sae_count = 0
+        for f in rep.findings:
+            if f.code == "SERIOUS_AE" and sae_count < 2:
+                add_finding_chain(f)
+                sae_count += 1
+
+        dose_count = 0
+        for f in rep.findings:
+            if f.code == "WRONG_DOSE" and dose_count < 1:
+                add_finding_chain(f)
+                dose_count += 1
+
+    # Filter by node_type if requested
+    filtered_nodes = list(nodes_dict.values())
+    if node_type and node_type != "all":
+        target_types = set(node_type.lower().split(","))
+        filtered_nodes = [n for n in filtered_nodes if n["type"].lower() in target_types]
+        kept_ids = {n["id"] for n in filtered_nodes}
+        filtered_edges = [e for e in edges_list if e["source"] in kept_ids and e["target"] in kept_ids]
+    else:
+        filtered_edges = edges_list
+
+    return {
+        "nodes": filtered_nodes,
+        "edges": filtered_edges,
+        "stats": {
+            "total_study_nodes": build_stats.get("nodes", 27179),
+            "total_study_edges": build_stats.get("edges", 27178),
+            "total_subjects": len(graph.subjects),
+            "total_records": sum(len(t) for t in graph.tables.values()),
+            "active_cut": cut,
+            "protocol_version": protocol_version,
+            "findings_in_cycle": len(rep.findings),
+            "escalations_in_cycle": len(rep.escalations),
+            "deviations_in_cycle": len(rep.deviations),
+            "returned_nodes": len(filtered_nodes),
+            "returned_edges": len(filtered_edges),
+        },
+        "query": {
+            "usubjid": usubjid,
+            "finding_id": finding_id,
+            "record_ref": record_ref,
+            "node_type": node_type,
+            "cut": cut,
+            "protocol_version": protocol_version,
+        },
+    }
+

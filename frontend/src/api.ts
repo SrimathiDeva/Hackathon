@@ -9,6 +9,7 @@ import type {
   Stage2Report,
   Stage2DuplicateTestResult,
   Stage2ProtocolComparison,
+  KnowledgeGraphData,
 } from './types'
 
 // Use relative /api if Vite proxy is running, or explicit port 8000
@@ -191,6 +192,37 @@ export async function fetchProtocolComparison(cut: number = 6): Promise<Stage2Pr
   const res = await fetch(`${API_BASE}/api/stage2/protocol-comparison?cut=${cut}`)
   if (!res.ok) {
     let err = 'Failed to fetch protocol comparison'
+    try {
+      const data = await res.json()
+      if (data.detail) err = data.detail
+    } catch {}
+    throw new Error(err)
+  }
+  return res.json()
+}
+
+export async function fetchKnowledgeGraph(params?: {
+  usubjid?: string
+  finding_id?: string
+  record_ref?: string
+  node_type?: string
+  limit?: number
+  cut?: number
+  protocol_version?: number
+}): Promise<KnowledgeGraphData> {
+  const query = new URLSearchParams()
+  if (params?.usubjid) query.set('usubjid', params.usubjid)
+  if (params?.finding_id) query.set('finding_id', params.finding_id)
+  if (params?.record_ref) query.set('record_ref', params.record_ref)
+  if (params?.node_type) query.set('node_type', params.node_type)
+  if (params?.limit) query.set('limit', String(params.limit))
+  if (params?.cut) query.set('cut', String(params.cut))
+  if (params?.protocol_version) query.set('protocol_version', String(params.protocol_version))
+
+  const qs = query.toString() ? `?${query.toString()}` : ''
+  const res = await fetch(`${API_BASE}/api/knowledge-graph${qs}`)
+  if (!res.ok) {
+    let err = 'Failed to fetch knowledge graph'
     try {
       const data = await res.json()
       if (data.detail) err = data.detail

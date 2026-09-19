@@ -7,9 +7,10 @@ import {
   LayoutDashboard,
   Activity,
   ShieldAlert,
+  Share2,
 } from 'lucide-react'
 
-export type NavTab = 'monitor' | 'query' | 'patient' | 'findings' | 'protocol' | 'validation' | 'dashboard' | 'ask'
+export type NavTab = 'monitor' | 'knowledge-graph' | 'query' | 'patient' | 'findings' | 'protocol' | 'validation' | 'dashboard' | 'ask'
 
 interface SidebarProps {
   activeTab: NavTab
@@ -24,6 +25,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const navItems: Array<{ id: NavTab; label: string; icon: React.ReactNode; isNew?: boolean }> = [
     { id: 'monitor', label: 'PS2 MONITOR', icon: <ShieldAlert size={18} />, isNew: true },
+    { id: 'knowledge-graph', label: 'Knowledge Graph', icon: <Share2 size={18} />, isNew: true },
     { id: 'query', label: 'Query Workbench', icon: <Terminal size={18} /> },
     { id: 'patient', label: 'Patient 360', icon: <User size={18} /> },
     { id: 'findings', label: "Hy's Law", icon: <AlertTriangle size={18} /> },
