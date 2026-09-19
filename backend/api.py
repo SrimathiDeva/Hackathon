@@ -24,6 +24,7 @@ from starter.schemas import Question, RecordRef
 from stage1.study_graph import StudyGraph
 from stage1.atlas import Atlas
 from stage1.nlu import AtlasNLU
+from stage1.query_engine import QueryExecutor
 
 
 # Initialize FastAPI app
@@ -54,12 +55,13 @@ def serialize_obj(obj: Any) -> Any:
     return obj
 
 
-# Global instances of StudyGraph, Atlas, and AtlasNLU
+# Global instances of StudyGraph, Atlas, AtlasNLU, and QueryExecutor
 data_folder = os.path.join(BASE_DIR, "data", "hackathon-data")
 graph = StudyGraph(data_folder)
 build_stats = graph.build()
 atlas = Atlas(graph)
 nlu = AtlasNLU(atlas=atlas, graph=graph)
+query_executor = QueryExecutor(graph=graph, atlas=atlas, nlu=nlu)
 
 # Pre-index domain records for rapid evidence detail lookup: (domain, usubjid, seq) -> record
 record_index: Dict[tuple, Dict[str, Any]] = {}
@@ -84,6 +86,10 @@ for domain, records in graph.tables.items():
 class AskRequest(BaseModel):
     question: str
     kind: Optional[str] = None
+
+
+class QueryRequest(BaseModel):
+    question: str
 
 
 @app.get("/api/health")
@@ -208,6 +214,32 @@ def ask_atlas(req: AskRequest):
 
     ans_dict["evidence"] = enriched_evidence
     return ans_dict
+
+
+@app.post("/api/query")
+def query_atlas(req: QueryRequest):
+    """
+    Executes an advanced clinical query investigation.
+    Parses natural language into AtlasQuery AST, generates a 10-stage execution plan,
+    and returns grounded results with visual provenance lineage and evidence verification.
+    """
+    q_str = req.question.strip() if req.question else ""
+    if not q_str:
+        raise HTTPException(
+            status_code=400,
+            detail="The 'question' field cannot be empty. Please provide a clinical question.",
+        )
+
+    try:
+        result = query_executor.execute(q_str)
+        return serialize_obj(result)
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Clinical query engine error: {str(e)}",
+        )
 
 
 @app.get("/api/public-questions")

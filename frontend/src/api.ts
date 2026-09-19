@@ -5,6 +5,7 @@ import type {
   ProtocolInfo,
   HysLawData,
   Patient360Data,
+  QueryResponse,
 } from './types'
 
 // Use relative /api if Vite proxy is running, or explicit port 8000
@@ -68,3 +69,32 @@ export async function fetchHysLaw(): Promise<HysLawData> {
   if (!res.ok) throw new Error('Failed to load Hy\'s Law findings')
   return res.json()
 }
+
+export async function executeClinicalQuery(question: string): Promise<QueryResponse> {
+  const trimmed = question.trim()
+  if (!trimmed) {
+    throw new Error("The query cannot be empty. Please enter a clinical question.")
+  }
+  const startTime = performance.now()
+  const res = await fetch(`${API_BASE}/api/query`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question: trimmed }),
+  })
+  const elapsed = Math.round(performance.now() - startTime)
+
+  if (!res.ok) {
+    let errorDetail = 'ATLAS Query Engine execution error'
+    try {
+      const errData = await res.json()
+      if (errData.detail) errorDetail = errData.detail
+    } catch {
+      // fallback
+    }
+    throw new Error(errorDetail)
+  }
+
+  const data = await res.json()
+  return { ...data, elapsed_ms: elapsed }
+}
+

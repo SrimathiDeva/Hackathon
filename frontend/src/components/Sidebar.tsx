@@ -1,15 +1,14 @@
-import React from 'react'
 import {
-  LayoutDashboard,
+  Terminal,
   User,
-  HelpCircle,
   AlertTriangle,
   GitBranch,
   CheckCircle2,
+  LayoutDashboard,
   Activity,
 } from 'lucide-react'
 
-export type NavTab = 'dashboard' | 'patient' | 'ask' | 'findings' | 'protocol' | 'validation'
+export type NavTab = 'query' | 'patient' | 'findings' | 'protocol' | 'validation' | 'dashboard' | 'ask'
 
 interface SidebarProps {
   activeTab: NavTab
@@ -23,12 +22,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
   isBackendHealthy,
 }) => {
   const navItems: Array<{ id: NavTab; label: string; icon: React.ReactNode }> = [
-    { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={18} /> },
+    { id: 'query', label: 'Query Workbench', icon: <Terminal size={18} /> },
     { id: 'patient', label: 'Patient 360', icon: <User size={18} /> },
-    { id: 'ask', label: 'Ask ATLAS', icon: <HelpCircle size={18} /> },
     { id: 'findings', label: "Hy's Law", icon: <AlertTriangle size={18} /> },
     { id: 'protocol', label: 'Protocol', icon: <GitBranch size={18} /> },
     { id: 'validation', label: 'Validation', icon: <CheckCircle2 size={18} /> },
+    { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={18} /> },
   ]
 
   return (

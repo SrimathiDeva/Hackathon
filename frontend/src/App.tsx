@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Sidebar } from './components/Sidebar'
 import type { NavTab } from './components/Sidebar'
+import { QueryWorkbenchView } from './components/QueryWorkbenchView'
 import { DashboardView } from './components/DashboardView'
 import { Patient360View } from './components/Patient360View'
 import { AskAtlasView } from './components/AskAtlasView'
@@ -12,10 +13,16 @@ import type { StudyStats } from './types'
 import { AlertCircle } from 'lucide-react'
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<NavTab>('dashboard')
+  const [activeTab, setActiveTab] = useState<NavTab>('query')
+  const [selectedSubject, setSelectedSubject] = useState<string>('042-S07-001')
   const [isBackendHealthy, setIsBackendHealthy] = useState<boolean>(false)
   const [stats, setStats] = useState<StudyStats | null>(null)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+
+  const handleNavigateToPatient = (usubjid: string) => {
+    setSelectedSubject(usubjid)
+    setActiveTab('patient')
+  }
 
   const checkBackend = async () => {
     try {
@@ -26,7 +33,7 @@ export function App() {
       setStats(st)
     } catch {
       setIsBackendHealthy(false)
-      setErrorMessage('ATLAS service unavailable. Please check that the backend is running at http://localhost:8000.')
+      setErrorMessage('ATLAS service unavailable. Please check that the backend is running at http://127.0.0.1:8001.')
     }
   }
 
@@ -69,7 +76,7 @@ export function App() {
             </span>
             <span style={{ color: '#64748b' }}>/</span>
             <span style={{ fontSize: '0.9rem', color: '#38bdf8', fontWeight: 600, textTransform: 'capitalize' }}>
-              {activeTab === 'findings' ? "Hy's Law" : activeTab}
+              {activeTab === 'query' ? 'Query Workbench' : activeTab === 'findings' ? "Hy's Law" : activeTab}
             </span>
           </div>
 
@@ -104,10 +111,15 @@ export function App() {
 
         {/* Page Content View */}
         <div style={{ flex: 1, padding: '2.5rem', overflowY: 'auto' }}>
+          {activeTab === 'query' && (
+            <QueryWorkbenchView onNavigateToPatient={handleNavigateToPatient} />
+          )}
           {activeTab === 'dashboard' && (
             <DashboardView stats={stats} setActiveTab={setActiveTab} />
           )}
-          {activeTab === 'patient' && <Patient360View />}
+          {activeTab === 'patient' && (
+            <Patient360View initialSubject={selectedSubject} />
+          )}
           {activeTab === 'ask' && <AskAtlasView />}
           {activeTab === 'findings' && <HysLawView />}
           {activeTab === 'protocol' && <ProtocolView />}
